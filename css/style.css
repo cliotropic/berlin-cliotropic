@@ -84,7 +84,6 @@ body {
 		font-size: 2.4em;
 		line-height:1em;
 		margin-bottom: 0.5em;
-		text-transform:lowercase;
 		letter-spacing:.05em;
 		}
 	h2 {
@@ -602,6 +601,7 @@ body {
 	zoom:1;
 	padding-top:18px;
 	}
+	
 	#footer a {
 		text-decoration:none;
 		}
@@ -617,9 +617,13 @@ body {
 		#footer .navigation a {
 			margin-left:8px;
 			}
-	#footer #footer-text {
+	#footer #footer-text p {
 		float:left;
 		width: 48%;
+		font-size:1em;
+                line-height:1.2em;
+                margin-bottom:0.1em;
+		
 		}
 	
 /* == Exhibit Builder styles == */
