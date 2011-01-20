@@ -29,7 +29,7 @@
 			        <?php if ($index == 0): ?>
 		    	       <?php echo display_file($file, array('imageSize'=>'fullsize'), array('class' => 'fullsize', 'id' => 'item-image')); ?>
 		    	    <?php else: ?>
-		    	        <?php echo display_file($file, array('imageSize'=>'square_thumbnail', 'linkToFile'=>true), array('class' => 'square_thumbnail')); ?>
+		    	        <?php echo display_file($file, array('imageSize'=>'thumbnail', 'linkToFile'=>true), array('class' => 'thumbnail')); ?>
 		    	    <?php endif; ?>
 			    <?php endif; ?>
 			    <?php $index++; ?>
