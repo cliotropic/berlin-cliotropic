@@ -16,7 +16,7 @@
     	<?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
     	<!-- Featured Collection -->
     	<div id="featured-collection">
-    	    <?php echo display_random_featured_collection(); ?>
+    	    <?php echo berlin_ct_display_random_featured_collection(); ?>
     	</div><!-- end featured collection -->
 		<?php endif; ?>	
 		
@@ -52,7 +52,7 @@
 
     				<?php if($desc = item('Dublin Core', 'Description', array('snippet'=>250))): ?>
 
-    				    <div class="item-description"><?php echo $desc; ?><?php echo link_to_item('see more',(array('class'=>'show'))) ?></div>
+    				    <div class="item-description"><?php echo $desc; ?><?php echo link_to_item('...',(array('class'=>'show'))) ?></div>
 
     				<?php endif; ?>	
 
@@ -61,7 +61,7 @@
     		</div>
 
     		<?php else: ?>
-    			<p>No recent items available.</p>
+   			<p>No recent items available.</p>
 
     		<?php endif; ?>
 

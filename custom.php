@@ -11,6 +11,24 @@ function berlin_ct_display_stats_code()
     } else { return "pants";}
 }
 
+function berlin_ct_display_random_featured_collection()
+{
+    $featuredCollection = random_featured_collection();
+    $html = '<h2>Featured Collection</h2>';
+    if ($featuredCollection) {
+        $html .= '<h3>' . link_to_collection($collectionTitle, array(), 'show', $featuredCollection) . '</h3>';
+        if ($collectionDescription = collection('Description', array('snippet'=>800), $featuredCollection)) {
+            $html .= '<p class="collection-description">' . $collectionDescription . '</p>';
+        }
+        
+    } else {
+        $html .= '<p>No featured collections are available.</p>';
+    }
+    return $html;
+}
+
+
+
 function custom_show_item_metadata(array $options = array(), $item = null) {
     if (!$item) {
         $item = get_current_item();
