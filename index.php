@@ -9,7 +9,7 @@
 	    <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
 		<!-- Featured Item -->
     	<div id="featured-item">
-    	    <?php echo display_random_featured_item(); ?>
+    	    <?php echo berlin_ct_display_random_featured_item(); ?>
     	</div><!--end featured-item-->	
     	<?php endif; ?>
     	
@@ -46,11 +46,11 @@
 
     				<?php if(item_has_thumbnail()): ?>
         				<div class="item-img">
-        				<?php echo link_to_item(item_square_thumbnail()); ?>						
+        				<?php echo link_to_item(item_thumbnail()); ?>						
         				</div>
     				<?php endif; ?>
 
-    				<?php if($desc = item('Dublin Core', 'Description', array('snippet'=>250))): ?>
+    				<?php if($desc = item('Dublin Core', 'Description', array('snippet'=>375))): ?>
 
     				    <div class="item-description"><?php echo $desc; ?><?php echo link_to_item('...',(array('class'=>'show'))) ?></div>
 
@@ -64,8 +64,6 @@
    			<p>No recent items available.</p>
 
     		<?php endif; ?>
-
-    		<p class="view-items-link"><a href="<?php echo html_escape(uri('items')); ?>">View All Items</a></p>
 			
 		</div><!--end recent-items -->
 		

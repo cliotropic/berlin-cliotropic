@@ -11,6 +11,29 @@ function berlin_ct_display_stats_code()
     } else { return "pants";}
 }
 
+ function berlin_ct_display_random_featured_item($withImage=false)
+ {
+    $featuredItem = random_featured_item($withImage);
+ 	$html = '<h2>Featured Item</h2>';
+ 	if ($featuredItem) {
+ 	    $itemTitle = item('Dublin Core', 'Title', array(), $featuredItem);
+        
+ 	   $html .= '<h3>' . link_to_item($itemTitle, array(), 'show', $featuredItem) . '</h3>';
+ 	   if (item_has_thumbnail($featuredItem)) {
+ 	       $html .= link_to_item(item_thumbnail(array(), 0, $featuredItem), array('class'=>'image'), 'show', $featuredItem);
+ 	   }
+ 	   // Grab the 1st Dublin Core description field (first 150 characters)
+ 	   if ($itemDescription = item('Dublin Core', 'Description', array('snippet'=>500), $featuredItem)) {
+ 	       $html .= '<p class="item-description">' . $itemDescription . '</p>';
+       }
+ 	} else {
+ 	   $html .= '<p>No featured items are available.</p>';
+ 	}
+
+     return $html;
+ }
+ 
+
 function berlin_ct_display_random_featured_collection()
 {
     $featuredCollection = random_featured_collection();
@@ -27,7 +50,35 @@ function berlin_ct_display_random_featured_collection()
     return $html;
 }
 
+function berlin_ct_display_random_featured_collection_item()
+{
+		$collname = get_current_collection()->name;
+		$featuredItem = 0;
+		$html = '<h2>Featured Item From This Collection</h2>';
+		while ($featuredItem == 0) {
+			$candidate_item = random_featured_item();
+			if (item_belongs_to_collection($collname, $candidate_item)) {
+				$featuredItem = $candidate_item;
+			}
+		}
+		// Swiped from ItemFunctions.php
+		if ($featuredItem) {
+ 	    $itemTitle = item('Dublin Core', 'Title', array(), $featuredItem);
+        
+ 	   $html .= '<h3>' . link_to_item($itemTitle, array(), 'show', $featuredItem) . '</h3>';
+ 	   if (item_has_thumbnail($featuredItem)) {
+ 	       $html .= link_to_item(item_thumbnail(array(), 0, $featuredItem), array('class'=>'image'), 'show', $featuredItem);
+ 	   }
+ 	   // Grab the 1st Dublin Core description field (first 1000 characters)
+ 	   if ($itemDescription = item('Dublin Core', 'Description', array('snippet'=>1000), $featuredItem)) {
+ 	       $html .= '<p class="item-description">' . $itemDescription . '</p>';
+       }
+	 	} else {
+ 		   $html .= '<p>No featured items are available.</p>';
+ 		}
 
+     return $html;
+}
 
 function custom_show_item_metadata(array $options = array(), $item = null) {
     if (!$item) {

@@ -89,13 +89,13 @@ body {
 		}
 	
 	h1 {
-		font-size: 2.4em;
+		font-size: 2.0em;
 		line-height:1em;
 		margin-bottom: 0.5em;
 		letter-spacing:.03em;
 		}
 	h2 {
-		font-size: 1.8em;
+		font-size: 1.75em;
 		line-height:1.3em;
 		margin-bottom:0.5em;
 		}
@@ -309,6 +309,90 @@ body {
 				float:left;
 				width:280px;	
 			}
+		/* Collection Items */
+		#collections.show div#primary {
+			float:left;
+			width:558px;		
+		}
+		#collections.show div#secondary {
+			float:right;
+			width:270px;
+		}
+		#collections.show div#tertiary {
+			clear:both;
+			width:846px;
+		}
+		
+		
+		#collections.show .element-text {
+			font-size:1em;
+			}
+
+		#collection-item {
+			overflow:hidden;
+			zoom:1;
+			border-bottom:1px solid #ccc;
+			background:#eee3dd;
+			padding:18px 18px 0;
+			margin-bottom:18px;
+		}
+		
+		#collections.show #featured-item img {
+			float:right;
+			margin-left:18px;
+			margin-bottom:18px;
+			border:1px solid #111;
+			padding:2px;
+			}	
+
+		
+		#collection-items .item {
+			width: 198px;
+			border-bottom:1px solid #9a927f;
+			padding-bottom:18px;
+			margin-bottom:18px;
+			overflow:hidden;
+			zoom:1;
+			display:-moz-inline-stack;
+			display:inline-block;
+			zoom:1;
+			*display:inline;
+			padding-right:36px;
+			padding-left:36px;
+			}
+			#collection-items .item h2 {
+				width: 198px;
+				margin-right:18px;
+				}
+			#collection-items .item h3 {
+				width: 198px;
+				margin-right:18px;
+				margin-left:18px;
+				margin-bottom:18px;
+				}
+
+			#collection-items .item img {
+				width: 198px;
+	            border:1px solid #ccc;
+                padding:1px;
+				}
+			#collection-items .item-description {
+				width: 198px;
+				font-size:1em;
+				margin-right:18px;
+				}
+/* Workaround for LibX toolbar, which doesn't set image widths or div names */
+			#collection-items .item span.Z3988 a img	 {  
+				width:auto;
+				height:auto;
+				margin-right:6px;
+				border:0;
+				padding:0;			
+			}
+			#collection-items .item span.Z3988 {
+				float:left;
+				width:198px;	
+			}
 		/* Search Results */
 		
 		.item-pagination {
@@ -518,17 +602,17 @@ body {
 	/* Home Page */
 	#home #primary {
 		float:left;
-		width:414px;
+		width:558px;
 		}
 	#home #secondary {
 		float:right;
-		width:414px;
+		width:270px;
 		}
-	#featured-collection {
+	#home #featured-collection {
 		border-bottom:1px solid #ccc;
 		margin-bottom:18px;
 		}	
-	#featured-item {
+	 #featured-item {
 		overflow:hidden;
 		zoom:1;
 		border-bottom:1px solid #ccc;
@@ -554,11 +638,12 @@ body {
 		margin-bottom:18px;
 		border:1px solid #111;
 		padding: 2px;
+		width:240px;
 		}
 	.item-description {
-		font-size:1.2em;
-		line-height:1.5em;
+		line-height:1.1em;
 		margin-bottom:1.5em;
+		margin-left:18px;
 		}
     .item-description p {
 		font-size:1em;
