@@ -282,20 +282,26 @@ body {
 			}
 			.browse .item h2 {
 				float:left;
-				width: 198px;
 				margin-right:18px;
 				}
 			.browse .item img {
 				float:right;
 				width: 198px;
-				height: 198px;
-                                border:1px solid #111;
-                                padding:2px;
+                border:1px solid #111;
+                padding:2px;
 				}
 			.browse .item-description {
 				float:left;
 				width: 414px;
 				}
+			.none-yet {
+				padding-top:3em;
+				padding-bottom:3em;
+				font-size:1.2em;
+				font-style:italic;
+				color:#9a927f;   // khaki, for a grayed-out effect
+				}
+				
 /* Workaround for LibX toolbar, which doesn't set image widths or div names */
 			.browse .item span.Z3988 a img	 {  
 				width:auto;
@@ -307,9 +313,9 @@ body {
 			}
 			.browse .item span.Z3988 {
 				float:left;
-				width:280px;	
 			}
-		/* Collection Items */
+		
+		/* Collection Items Pages */
 		#collections.show div#primary {
 			float:left;
 			width:558px;		
@@ -374,7 +380,7 @@ body {
 			#collection-items .item img {
 				width: 198px;
 	            border:1px solid #ccc;
-                padding:1px;
+                padding:2px;
 				}
 			#collection-items .item-description {
 				width: 198px;
@@ -651,8 +657,39 @@ body {
 
 	/* Items Pages */
 	#items.show #primary {
+		float:left;
 		width: 558px;
 		}
+	#items.show #secondary {
+		float:right;
+		width: 234px;
+		padding-top:0;
+		padding-left:18px;
+		}
+	#items.show #secondary .item-pagination {
+		clear:both;
+		overflow:hidden;
+		border-top:1px solid #eee;
+		padding-top:0px;
+		padding-bottom:1em;
+	}
+		.item-pagination a {
+			text-decoration:none;
+			font-weight:bold;
+			width:48%;
+			float:left;
+			}
+		.item-pagination .next a {
+			float:right;
+			text-align:right;
+			}
+
+	#secondary .element {
+		margin-bottom: 2em;
+		padding-bottom: 1em;
+		border-bottom:1px solid #9a927f;     // khaki lines separate elements
+	}
+		
 	ul.title-list {
 		margin:0;
 		}
@@ -662,16 +699,22 @@ body {
 		font-style:italic;
 		}
 		#item-images {
-			overflow:visible;
+			overflow:hidden;
 			margin-bottom:18px;
 			margin-right:-10px;
 			}
 		.fullsize {
 			margin-right:10px;
+	    	padding-bottom:1em;
 			}
+		
+		#item-images img.full {
+			border:1px solid #333;
+            padding:2px;
+            width:98%;
+		}
 		#item-img img {
 			width:100%;
-
 			}
 			.square_thumbnail {
 				overflow:hidden;

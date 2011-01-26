@@ -27,9 +27,9 @@
 			<?php while ($file = loop_files_for_item()): ?>
 			    <?php if ($file->hasThumbnail()): ?>
 			        <?php if ($index == 0): ?>
-		    	       <?php echo display_file($file, array('imageSize'=>'fullsize'), array('class' => 'fullsize', 'id' => 'item-image')); ?>
+		    	       <?php echo display_file($file, array('imageSize'=>'fullsize', 'linkToFile'=>true), array('class' => 'fullsize', 'id' => 'item-image')); ?>
 		    	    <?php else: ?>
-		    	        <?php echo display_file($file, array('imageSize'=>'thumbnail', 'linkToFile'=>true), array('class' => 'thumbnail')); ?>
+		    	        <?php echo display_file($file, array('imageSize'=>'fullsize', 'linkToFile'=>true), array('class' => 'fullsize', 'id' => 'item-image-additional')); ?>
 		    	    <?php endif; ?>
 			    <?php endif; ?>
 			    <?php $index++; ?>
@@ -76,7 +76,11 @@
     	<div class="element-text"><?php echo item_citation(); ?></div>
 	</div>
 	
-	<?php echo plugin_append_to_items_show(); ?>
+	<?php echo public_cc_for_item(); ?>
+
+	
+</div><!-- end primary -->
+<div id="secondary">
 
 	<ul class="item-pagination navigation">
 	<li id="previous-item" class="previous">
@@ -87,6 +91,12 @@
 	</li>
 	</ul>
 	
-</div><!-- end primary -->
+	<div id="social-bookmarks" class="element">
+		<?php echo social_bookmarking_append_to_item(); ?>
+	</div>
+	<div id="comments" class="element">
+		<?php echo intense_debate_comments_public_append_to_items_show(); ?>
+	</div>
+</div><!-- end secondary -->
 
 <?php foot(); ?>
