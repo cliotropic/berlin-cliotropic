@@ -2,7 +2,7 @@
 
 <div id="footer">
 	<ul class="navigation">
-		<?php echo public_nav_main(array('Home' => uri(''), 'Browse Items' => uri('items'), 'Browse Collections'=>uri('collections')));
+		<?php echo public_nav_main(array('Sources Home' => uri(''), 'Browse Items' => uri('items'), 'Browse Collections'=>uri('collections')));
        	?>
 	</ul>
 
